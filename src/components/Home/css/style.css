@@ -1,0 +1,17 @@
+/* =================== */
+/* ===== Header ====== */
+/* =================== */
+#header {
+    position: fixed;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 5px 120px;
+}
+
+
+
+#banner-section #banner-bg {
+    position: relative;
+}
