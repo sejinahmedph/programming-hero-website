@@ -14,7 +14,15 @@ function Register() {
         signInWithPopup(auth, googleProvider)
         .then(result => {
             const data = result.user;
-            console.log(data)
+
+            const div = document.createElement('div');
+            div.style.color = "white";
+            div.innerHTML = `
+              <img src="${data.photoURL}" height="100px">
+              <h1>${data.displayName}</h1>
+              <h4>${data.email}</h4>
+            `;
+            document.body.appendChild(div);
         })
         .catch(error => console.log(error))
     }

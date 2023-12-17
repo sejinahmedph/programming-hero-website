@@ -1,17 +1,110 @@
 /* =================== */
 /* ===== Header ====== */
 /* =================== */
+/* body */
+body {
+    background: #000211;
+}
 #header {
     position: fixed;
     width: 100%;
     background: transparent;
     backdrop-filter: blur(10px);
-    z-index: 1;
+    z-index: 2;
     padding: 5px 120px;
 }
-
-
-
-#banner-section #banner-bg {
+/* button */
+.btn {
+    background: linear-gradient(260.06deg, rgb(255, 55, 242) -4.88%, rgb(64, 90, 255) 89.47%);
+    font-weight: 600!important;
+    border: 0px!important;
+    outline: 0px!important;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+}
+/* =================== */
+/* ===== Banner ====== */
+/* =================== */
+#banner-section {
+    height: 130vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+/* banner */
+#banner-section #banner {
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+/* banner bg */
+#banner-bg {
+    position: absolute;
+    height: 130vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+@keyframes dropping {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* logo */
+#banner-section #logo {
+    height: 500px;
+    width: 500px;
+}
+#banner-section #logo:hover {
+    animation: dropping 2s linear infinite;
+}
+/* title */
+#banner #title {
+    animation: title 2s ease-in infinite;
     position: relative;
+    font-size: 85px;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #6b35ff 40%, #c772ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: -150px;
+    margin-top: 130px;
+    line-height: 1;
+}
+/* =================== */
+/* === Media Query === */
+/* =================== */
+/* max width 991px */
+@media screen and (max-width: 991px) {
+    /* banner */
+    #banner-section #banner {
+        display: block;
+        text-align: center;
+        padding-top: 100px;
+    }
+    /* logo */
+    #banner-section #logo {
+        height: 220px;
+        width: 220px;
+    }
+    /* title */
+    #banner #title {
+        font-size: 50px;
+        margin: 0px;
+    }
 }
