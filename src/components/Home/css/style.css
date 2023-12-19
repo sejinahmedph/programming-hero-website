@@ -11,10 +11,14 @@ body {
     background: transparent;
     backdrop-filter: blur(10px);
     z-index: 2;
-    padding: 5px 120px;
+    padding: 5px 90px;
+}
+.navbar-toggler {
+    box-shadow: none!important;
 }
 /* button */
 .btn {
+    height: 45px;
     background: linear-gradient(260.06deg, rgb(255, 55, 242) -4.88%, rgb(64, 90, 255) 89.47%);
     font-weight: 600!important;
     border: 0px!important;
@@ -74,7 +78,6 @@ body {
 }
 /* title */
 #banner #title {
-    animation: title 2s ease-in infinite;
     position: relative;
     font-size: 85px;
     font-weight: 550;
@@ -87,15 +90,49 @@ body {
     line-height: 1;
 }
 /* =================== */
+/* == Hero Section === */
+/* =================== */
+#hero-section {
+    background: #000211;
+    color: white;
+    padding: 120px 10px;
+}
+#hero-section img {
+    border: 1px solid #6b35ff;
+    box-shadow: 0rem 0.5rem 1.5rem rgb(196, 40, 251);
+}
+/* =================== */
+/* == Impact Section = */
+/* =================== */
+#impact-section {
+    background: #000211;
+    padding: 120px 10px;
+}
+#impact-card {
+    max-width: 750px;
+    margin-left: auto;
+    margin-top: 30px;
+    background: linear-gradient(99.38deg, #DC02CE 11.03%, #7C3FF2 66.81%, #5C53FE 89.78%);
+    color: white;
+}
+/* =================== */
 /* === Media Query === */
 /* =================== */
 /* max width 991px */
 @media screen and (max-width: 991px) {
+    /* header */
+    #header {
+        padding: 5px;
+    }
+    /* banner-section */
+    #banner-section, #banner-bg {
+        height: 100vh;
+    }
     /* banner */
     #banner-section #banner {
         display: block;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 80px;
     }
     /* logo */
     #banner-section #logo {
@@ -106,5 +143,9 @@ body {
     #banner #title {
         font-size: 50px;
         margin: 0px;
+    }
+    /* hero section > row */
+    #hero-section .row {
+        gap: 2rem!important;
     }
 }
