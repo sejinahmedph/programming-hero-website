@@ -8,6 +8,12 @@ import ic_menu from './images/ic_menu.svg';
 import jhankarMahbub from './images/ceo.png';
 import masudRana from './images/senior-web-developer.png';
 import sejinAhmed from './images/junior-web-developer.png';
+import webPopupEnrollment from './images/web-popup-enroll.webp';
+import zeroToCareer from './images/zero-career.svg';
+import globe from './images/globe.svg';
+import liveSupport from './images/live-support.svg';
+import crashCourse from './images/crash-course.svg';
+import offlineVideos from './images/offline-videos.svg';
 // Bootstrap Components
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -22,9 +28,9 @@ import Col from 'react-bootstrap/Col';
 
 function Home() {
   // Modal Controller ====
-  const [lgShow, setLgShow] = useState(false);
-  const handleClose = () => setLgShow(false);
-  const handleShow = () => setLgShow(true);
+  const [show, setShow] = useState(true);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   // =====================
   return (
     <div>
@@ -45,22 +51,34 @@ function Home() {
                   <Nav.Link className='text-white' href="/Course-details">Course Details</Nav.Link>
                   <Nav.Link className='text-white' href="/About">About Us</Nav.Link>
                   <Nav.Link className='text-white' href="/Login">Login</Nav.Link>
-                  <Button className='btn ms-auto me-auto' style={{width: "120px"}} onClick={handleShow}>Enroll Now</Button>
-                  <Modal show={lgShow} onHide={handleClose} backdrop="static" keyboard={false}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Modal title</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      I will not close if you click outside me. Do not even try to press
-                      escape key.
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                        Close
-                      </Button>
-                      <Button variant="primary">Understood</Button>
-                    </Modal.Footer>
-                  </Modal>
+                  <Button className='ms-auto me-auto' style={{width: "120px"}} onClick={handleShow}>Enroll Now</Button>
+                  <>
+                    <Modal show={show} onHide={() => setShow(false)} dialogClassName="modal-90w" 
+                    aria-labelledby="example-custom-modal-styling-title">
+                      <Modal.Header className='p-2 px-0 border-0'>
+                        <Button className='ms-auto bg-none' onClick={handleClose}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 28 28">
+                          <rect width="28" height="28" fill="#EB5757" fill-opacity="0.08" rx="4"></rect>
+                          <path stroke="#EB5757" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" 
+                          d="M19 9L9 19M9 9l10 10"></path>
+                        </svg>
+                        </Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <div>
+                          <img src={webPopupEnrollment} className='w-100' alt="web-popup-enrollment"/>
+                        </div>
+                        <div className='py-4 text-center'>
+                          <span className='text-white'>৯ম ব্যাচের এনরোলমেন্ট চলছে। এনরোলমেন্ট চলবে ডিসেম্বর ২৪ তারিখ পর্যন্ত। ডিসেম্বর ২৪ 
+                          তারিখের পর একজনকেও এই ব্যাচে সুযোগ দেওয়া হবে না। তোমাদের চেষ্টা, আমাদের গাইড। 
+                          নয়া নবম দিবে ফাইট 🔥🎯</span><br/><br/>
+                          <a href="/Register">
+                            <Button>Register Now</Button>
+                          </a>
+                        </div>
+                      </Modal.Body>
+                    </Modal>
+                  </>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -113,14 +131,95 @@ function Home() {
       </section>
       <section id='impact-section'>
         <Container>
-          <h1 className='title text-end'>Our Impact_</h1>
+          <h1 className='title text-end'>Our <br/> Impact_</h1>
           <article className='p-5 rounded-3' id='impact-card'>
-            frghf
+            <div className='py-3'>
+              <Row>
+                <Col id='first'>
+                  <h1 className='fw-bold'>3000+</h1>
+                  <h5>Job placement worldwide</h5>
+                </Col>
+                <Col className='px-3'>
+                  <h1 className='fw-bold'>1200+</h1>
+                  <h5>Connected companies</h5>
+                </Col>
+                <Col id='last'>
+                  <h1 className='fw-bold'>14+</h1>
+                  <h5>Dedicated Job Placement Executives</h5>
+                </Col>
+              </Row>
+            </div>
+          </article>
+        </Container>
+      </section>
+      <section id='x-factors-section'>
+        <h1 className='title'>X-Factors Of <br/> Programming Hero_</h1>
+        <Container className='py-5'>
+          <article className='rounded-4' id='first'>
+            <div className='py-4 ps-4 pe-4'>
+              <span className="fs-5 fw-500">ZERO TO CAREER</span><br/>
+              <h1 className='my-3'>ZERO TO CAREER</h1>
+              <h4 className='instruction fw-500'>You will <span className='bg-warning text-dark p-1 px-2 rounded'>get everything</span> 
+              from the beginning of your journey <span className='bg-warning text-dark p-1 px-2 rounded'>until you get an 
+              internship or a full-time job.</span></h4>
+            </div>
+            <div className='image-container bg-white ms-auto rounded-end-4'>
+              <img src={zeroToCareer} height={'100%'} width={'300px'} alt="img"/>
+            </div>
+          </article>
+          <article className='rounded-4' id='second'>
+            <div className='py-4 ps-4 pe-4'>
+              <span className="fs-5 fw-500">LOCAL AND INTERNATIONAL JOBS</span><br/>
+              <h2 className='my-3'>LOCAL AND INTERNATIONAL JOBS</h2>
+              <h4 className='instruction fw-500'>Dedicated <span className='text-white p-1 px-2 rounded'
+              style={{background: "#1B1E5C"}}> 17+ Job Placement 
+              Managers</span> will help you to <span className='text-white p-1 px-2 rounded' 
+              style={{background: "#1B1E5C"}}>find a job locally and internationally.</span></h4>
+            </div>
+            <div className='image-container bg-white ms-auto rounded-end-4'>
+              <img src={globe} height={'100%'} width={'300px'} alt="img"/>
+            </div>
+          </article>
+          <article className='rounded-4' id='third'>
+            <div className='py-4 ps-4 pe-4'>
+              <span className="fs-5 fw-500">UNLIMITED LIVE SUPPORT</span><br/>
+              <h2 className='my-3'>UNLIMITED LIVE SUPPORT</h2>
+              <h4 className='instruction fw-500'>You can Join <span className='bg-warning text-dark p-1 px-2 rounded'>one to one 
+              live support sessions three times a day.</span> It is guaranteed to 
+              <span className='bg-warning text-dark p-1 px-2 rounded'>get answers</span> to every question 
+              <span className='bg-warning text-dark p-1 px-2 rounded'>within 10 hours.</span></h4>
+            </div>
+            <div className='image-container bg-white ms-auto rounded-end-4'>
+              <img src={liveSupport} height={'100%'} width={'300px'} alt="img"/>
+            </div>
+          </article>
+          <article className='rounded-4' id='fourth'>
+            <div className='py-4 ps-4 pe-4'>
+              <span className="fs-5 fw-500">ADVANCED CRASH COURSE</span><br/>
+              <h2 className='my-3'>ADVANCED CRASH COURSE</h2>
+              <h4 className='instruction fw-500'>After completing the main course seriously in time you will 
+              <span className='bg-danger text-white p-1 px-2 rounded'>get access to SCIC (Super Charged Interviewee Club) and ACC </span>
+              (Redux, Node, Mongodb)</h4>
+            </div>
+            <div className='image-container bg-white ms-auto rounded-end-4'>
+              <img src={crashCourse} height={'100%'} width={'300px'} alt="img"/>
+            </div>
+          </article>
+          <article className='rounded-4' id='fifth'>
+            <div className='py-4 ps-4 pe-4'>
+              <span className="fs-5 fw-500">OFFLINE VIDEOS</span><br/>
+              <h2 className='my-3'>OFFLINE VIDEOS</h2>
+              <h4 className='instruction fw-500'>Watch <span className='bg-warning text-dark p-1 px-2 rounded'>course videos offline</span> 
+              in our <span className='bg-warning text-dark p-1 px-2 rounded'>mobile</span> and <span 
+              className='bg-warning text-dark p-1 px-2 rounded'>desktop</span> app at your convenience.</h4>
+            </div>
+            <div className='image-container bg-white ms-auto rounded-end-4'>
+              <img src={offlineVideos} height={'100%'} width={'300px'} alt="img"/>
+            </div>
           </article>
         </Container>
       </section>
     </div>
-  
   );
 }
 

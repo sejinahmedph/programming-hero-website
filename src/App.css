@@ -1,3 +1,7 @@
+/* root */
+:root {
+  --swiper-theme-color: #007aff;
+}
 /* title */
 .title {
   font-size: 60px;
@@ -9,6 +13,14 @@
 }
 .title-color {
   color: #cba2ff;
+}
+/* background */
+.bg-none {
+  background: none!important;
+}
+/* font */
+.fw-500 {
+  font-weight: 500!important;
 }
 
 /* max width 991px */

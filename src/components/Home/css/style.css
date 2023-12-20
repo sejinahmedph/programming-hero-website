@@ -10,7 +10,7 @@ body {
     width: 100%;
     background: transparent;
     backdrop-filter: blur(10px);
-    z-index: 2;
+    z-index: 7;
     padding: 5px 90px;
 }
 .navbar-toggler {
@@ -25,6 +25,22 @@ body {
     outline: 0px!important;
     padding-left: 20px!important;
     padding-right: 20px!important;
+}
+.btn:hover {
+    background: linear-gradient(260.06deg, rgb(255, 125, 246) -4.88%, rgb(136, 152, 255) 89.47%);
+}
+/* modal dialog */
+.modal-dialog {
+    max-width: 800px!important;
+}
+.modal-content {
+    background: linear-gradient(rgb(40, 2, 63) 0%, rgb(1, 3, 19) 62.56%, rgb(40, 2, 63), rgb(1, 3, 19));
+    border: 0px!important;
+    border-radius: 20px!important;
+}
+.modal-body {
+    padding-left: 40px!important;
+    padding-right: 40px!important;
 }
 /* scrollbar */
 ::-webkit-scrollbar {
@@ -44,7 +60,7 @@ body {
     max-width: 1500px;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 6;
 }
 /* banner bg */
 #banner-bg {
@@ -105,8 +121,8 @@ body {
 /* == Impact Section = */
 /* =================== */
 #impact-section {
-    background: #000211;
-    padding: 120px 10px;
+    background: linear-gradient(to bottom, #000211 10px, #007aff);
+    padding: 80px 0px;
 }
 #impact-card {
     max-width: 750px;
@@ -114,6 +130,67 @@ body {
     margin-top: 30px;
     background: linear-gradient(99.38deg, #DC02CE 11.03%, #7C3FF2 66.81%, #5C53FE 89.78%);
     color: white;
+}
+#impact-card .row .col#first {
+    border-right: 1px solid white;
+}
+#impact-card .row .col#last {
+    border-left: 1px solid white;
+}
+/* =================== */
+/*  X Factors Section  */
+/* =================== */
+#x-factors-section {
+    background: linear-gradient(to bottom, #007aff, #000211);
+    color: white;
+    padding: 90px 0px;
+}
+#x-factors-section article {
+    display: flex;
+    padding-left: 20px;
+    box-shadow: 0px 2px 7.12716px rgba(2, 1, 1, 0.15);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#x-factors-section article .instruction {
+    line-height: 60px;
+}
+/* first */
+#x-factors-section #first {
+    position: sticky;
+    top: 150px;
+    background: linear-gradient(105.89deg, #124CA2 7.77%, #1B1E5C 95.22%);
+    z-index: 1;
+}
+/* second */
+#x-factors-section #second {
+    position: sticky;
+    top: 180px;
+    background: linear-gradient(102.55deg, #85F8C1 20.86%, #078A5B 92.2%);
+    color: #1B1E5C;
+    z-index: 2;
+}
+/* third */
+#x-factors-section #third {
+    position: sticky;
+    top: 210px;
+    background: linear-gradient(105.89deg, #B80F9D 7.77%, #1B1E5C 95.22%);
+    z-index: 3;
+}
+/* fourth */
+#x-factors-section #fourth {
+    position: sticky;
+    top: 240px;
+    background: linear-gradient(105.89deg, #FFDF6A 7.77%, #FABB43 95.22%);
+    color: #1B1E5C;
+    z-index: 4;
+}
+/* fifth */
+#x-factors-section #fifth {
+    position: sticky;
+    top: 270px;
+    background: linear-gradient(105.89deg, #8840FF 7.77%, #03024A 95.22%);
+    z-index: 5;
 }
 /* =================== */
 /* === Media Query === */
@@ -123,6 +200,11 @@ body {
     /* header */
     #header {
         padding: 5px;
+    }
+    /* modal body */
+    .modal-body {
+        padding-left: 15px!important;
+        padding-right: 15px!important;
     }
     /* banner-section */
     #banner-section, #banner-bg {
@@ -147,5 +229,29 @@ body {
     /* hero section > row */
     #hero-section .row {
         gap: 2rem!important;
+    }
+    /* impact card > row */
+    #impact-card .row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
+    #impact-card .row .col#first {
+        border-right: 0px;
+        border-bottom: 1px solid white;
+        padding-bottom: 2rem;
+    }
+    #impact-card .row .col#last {
+        border-left: 0px;
+        border-top: 1px solid white;
+        padding-top: 2rem;
+    }
+    /* x factors > instructions */
+    #x-factors-section article .instruction {
+        font-size: large;
+        line-height: 35px;
+    }
+    #x-factors-section article .image-container {
+        display: none;
     }
 }
