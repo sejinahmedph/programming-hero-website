@@ -99,7 +99,7 @@ body {
     font-weight: 550;
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to right, #6b35ff 40%, #c772ff);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: -150px;
     margin-top: 130px;
@@ -141,7 +141,7 @@ body {
 /*  X Factors Section  */
 /* =================== */
 #x-factors-section {
-    background: linear-gradient(to bottom, #007aff, #000211);
+    background: linear-gradient(to bottom, #007aff, #010313);
     color: white;
     padding: 90px 0px;
 }
@@ -195,7 +195,7 @@ body {
 /* ======================= */
 /* What will learn Section */
 /* ======================= */
-#what-will-learn-section {
+/* #what-will-learn-section {
     padding: 80px 10px;
     background: #000211;
     color: white;
@@ -251,12 +251,12 @@ body {
 }
 #what-will-learn-section .item-2 {
     animation: dropping2 5s linear infinite;
-}
+} */
 /* ==================== */
 /* = Projects Section = */
 /* ==================== */
 #projects-section {
-    background: #000211;
+    background: linear-gradient(to bottom, #000211, #007aff);
     padding: 80px 0px;
 }
 #projects-section #container {
@@ -280,6 +280,7 @@ body {
 }
 #projects-section #container .item:hover img {
     transform: scale(1.1);
+    box-shadow: 0px 2px 7.12716px rgba(2, 1, 1, 0.15);
 }
 #projects-section #container .item .title {
     font-size: 45px;
@@ -291,10 +292,75 @@ body {
 }
 #projects-section #container .item .ic_arrow {
     opacity: 0;
-    margin-left: -40px;
+    margin-left: -70px;
 }
 #projects-section #container .item:hover .ic_arrow {
     opacity: 1;
+    box-shadow: none;
+}
+/* =================== */
+/* ==== Meet Team ==== */
+/* =================== */
+#meet-team-section {
+    background:linear-gradient(#007aff, #000211);
+    padding: 80px 0px;
+}
+@keyframes hero1 {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes hero2 {
+    0% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+#meet-team-section img {
+    animation: hero1 5s linear infinite;
+}
+#meet-team-section #hero-2 {
+    animation: hero2 5s linear infinite;
+}
+/* =================== */
+/* === Faq Section === */
+/* =================== */
+#faq-section {
+    background: #000211;
+    padding: 80px 0px;
+}
+#faq-section #accordion-container {
+    background: #180d55d2!important;
+    backdrop-filter: blur(0.5px);
+    color: white!important;
+    border-radius: 0px;
+    padding: 3rem;
+}
+#faq-section .accordion-item, .accordion-button {
+    background: none!important;
+    color: white!important;
+    border: 0px!important;
+    font-size: 26px!important;
+}
+#faq-section .accordion-button:hover {
+    background: #0e0636!important;
 }
 /* =================== */
 /* === Media Query === */
@@ -371,5 +437,15 @@ body {
     }
     #projects-section #container .item .title {
         font-size: 30px;
+    }
+    #faq-section #accordion-container {
+        padding: 1rem;
+        padding-top: 1.5rem;
+    }
+    #faq-section .accordion-item, .accordion-button {
+        font-size: 20px!important;
+    }
+    #faq-section .accordion-item .fs-5 {
+        font-size: 15px!important;
     }
 }

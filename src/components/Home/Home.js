@@ -14,21 +14,27 @@ import globe from './images/globe.svg';
 import liveSupport from './images/live-support.svg';
 import crashCourse from './images/crash-course.svg';
 import offlineVideos from './images/offline-videos.svg';
-import htmlBg from './images/html-active.svg';
-import cssBg from './images/css-active.svg';
-import tailwindBg from './images/tailwind-active.svg';
-import firebaseBg from './images/firebase-active.svg';
-import mongoBg from './images/mongodb-active.svg';
-import ic_html from './images/ic_html.svg';
-import ic_css from './images/ic_css.svg';
-import ic_tailwind from './images/ic_tailwind.svg';
-import ic_js from './images/ic_js.svg';
-import ic_react from './images/ic_react.svg';
-import ic_firebase from './images/ic_firebase.svg';
-import ic_mongo from './images/ic_mongo.svg';
+// import htmlBg from './images/html-active.svg';
+// import cssBg from './images/css-active.svg';
+// import tailwindBg from './images/tailwind-active.svg';
+// import firebaseBg from './images/firebase-active.svg';
+// import mongoBg from './images/mongodb-active.svg';
+// import ic_html from './images/ic_html.svg';
+// import ic_css from './images/ic_css.svg';
+// import ic_tailwind from './images/ic_tailwind.svg';
+// import ic_js from './images/ic_js.svg';
+// import ic_react from './images/ic_react.svg';
+// import ic_firebase from './images/ic_firebase.svg';
+// import ic_mongo from './images/ic_mongo.svg';
 import projectBg from './images/project-bg.png';
 import leaderBoard from './images/Project-2-Leaderboard.jpeg';
+import shoppingCart from './images/Project-5-Shopping-Cart.jpeg';
+import hotGadgets from './images/Project-6-Hot-gadget.jpeg';
+import emaJohn from './images/Project-7-Ema-John.jpeg';
+import geniusCar from './images/Project-8-Genius-Car-Mechanics.jpeg';
+import doctorsPortal from './images/Project-9-Doctor-Portal.jpeg';
 import ic_arrow from './images/ic_arrow-right.svg';
+import faqGridBg from './images/faq-grid-bg.png';
 // Bootstrap Components
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -38,7 +44,8 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Accordion from 'react-bootstrap/Accordion';
+import Footer from '../Footer/Footer';
 
 
 function Home() {
@@ -57,7 +64,7 @@ function Home() {
                 <img src={logo} height={'66px'} width={'66px'} style={{marginTop: "-7px"}} alt="logo-phero"/>
                 <span className="fs-5 text-white" style={{marginLeft: "-15px"}}>Programming Hero</span>
               </div>
-              <Navbar.Toggle aria-controls="basic-navbar-nav">
+              <Navbar.Toggle className='border-0' aria-controls="basic-navbar-nav">
                 <img src={ic_menu} alt="ic_menu"/>
               </Navbar.Toggle>
               <Navbar.Collapse id="basic-navbar-nav">
@@ -234,7 +241,7 @@ function Home() {
           </article>
         </Container>
       </section>
-      <section id='what-will-learn-section'>
+      {/* <section id='what-will-learn-section'>
         <div className='text-center p-2'>
           <h1 className='title'>What Will You Learn?_</h1>
           <span className='fs-5 fw-500'>The web course consists of 80+ modules, 25+ course projects, 15+ practice 
@@ -291,11 +298,11 @@ function Home() {
             </div>
           </div>
         </article>
-      </section>
+      </section> */}
       <section id='projects-section'>
         <h1 className='title'>Projects You Will Build_</h1>
         <Container className='py-5'>
-          <article className='py-5' style={{background: `url(${projectBg}) center bottom / contain no-repeat`}} id='container'>
+          <article className='py-5' style={{background: `url(${projectBg}) center bottom / cover no-repeat`}} id='container'>
             <div className='item rounded-4'>
               <div>
                 <h1 className='title m-2'>Ranking Board</h1>
@@ -305,14 +312,255 @@ function Home() {
                 <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
               </div>
             </div>
-            <div className='item'>
-              sa
+            <div className='item rounded-4'>
+              <div>
+                <h1 className='title m-2'>Shopping Cart</h1>
+              </div>
+              <div className='d-flex align-items-center'>
+                <img src={shoppingCart} className='w-100 rounded-4' alt="project"/>
+                <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
+              </div>
+            </div>
+            <div className='item rounded-4'>
+              <div>
+                <h1 className='title m-2'>Hot Gadgets</h1>
+              </div>
+              <div className='d-flex align-items-center'>
+                <img src={hotGadgets} className='w-100 rounded-4' alt="project"/>
+                <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
+              </div>
+            </div>
+            <div className='item rounded-4'>
+              <div>
+                <h1 className='title m-2'>Ema John</h1>
+              </div>
+              <div className='d-flex align-items-center'>
+                <img src={emaJohn} className='w-100 rounded-4' alt="project"/>
+                <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
+              </div>
+            </div>
+            <div className='item rounded-4'>
+              <div>
+                <h1 className='title m-2'>Genius Car</h1>
+              </div>
+              <div className='d-flex align-items-center'>
+                <img src={geniusCar} className='w-100 rounded-4' alt="project"/>
+                <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
+              </div>
+            </div>
+            <div className='item rounded-4'>
+              <div>
+                <h1 className='title m-2'>Doctors Portal</h1>
+              </div>
+              <div className='d-flex align-items-center'>
+                <img src={doctorsPortal} className='w-100 rounded-4' alt="project"/>
+                <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
+              </div>
             </div>
           </article>
+          <div className='text-center py-5'>
+            <a href="/Home/Projects">
+              <Button className='bg-none border px-5'>All Projects</Button>
+            </a>
+          </div>
         </Container>
       </section>
+      <section id='meet-team-section'>
+        <h1 className='title'>Meet Our Team_</h1>
+        <Container className='py-5 text-center'>
+          <Row className='gap-4'>
+            <Col>
+              <div>
+                <img src={jhankarMahbub} className='rounded-circle shadow-lg' height={"300px"} width={"263px"} alt="jhankar-mahbub"/><br/>
+                <span className='fs-4 fw-500 text-white'>Jhankar Mahbub</span><br/>
+                <span className='text-white fw-500'>Senior Web Developer - CEO</span>
+              </div>
+            </Col>
+            <Col>
+              <div>
+                <img src={masudRana} className='rounded-circle shadow-lg' id='hero-2' height={"300px"} width={"263px"} alt="m-rana"/><br/>
+                <span className='fs-4 fw-500 text-white'>Masud Rana</span><br/>
+                <span className='text-white fw-500'>Senior Web Developer - IT</span>
+              </div>
+            </Col>
+          </Row>
+          <div className='text-center py-5'>
+            <a href="/About">
+              <Button className='bg-none border px-5'>Explore Full Team</Button>
+            </a>
+          </div>
+        </Container>
+      </section>
+      <section id='faq-section'>
+        <h1 className='title'>Faq_</h1>
+        <Container style={{background: `url(${faqGridBg}) center / contain no-repeat`}} className='py-5'>
+          <div className='rounded-5' id='accordion-container' style={{border: "1px solid rgba(255, 255, 255, 0.1)"}}>
+            <Accordion>
+              <Accordion.Item className='my-1' eventKey="0">
+                <Accordion.Header>For Whom Is This Course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className='fs-5'>
+                    This Course Is Created For Those Who Want To Learn Web Development From Scratch And Build A Career As A Web 
+                    Developer In Software Companies. Even Those Who Studied CSE For Four Years But Didn't Learn Much And Couldn't 
+                    Decide What To Do, Can Complete Web Development From This Course And Apply For Jobs. 😀
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="1">
+                <Accordion.Header>What prior experience is needed for this course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    Since We'll Be Teaching From Scratch, You Don't Need To Know Anything Beforehand. But If You Have Free Time, 
+                    You Can Do These Things: Be Comfortable With A Computer, Internet So That You Can Search Anything Online You 
+                    Should Have Basic English Literacy Typing Speed 15-30 Wpm Will Be Excellent. Familiarity With HTML, CSS Would 
+                    Be Fantastic..
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="2">
+                <Accordion.Header>What Educational Background Is Required?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    We Have Designed The Course In Such A Way That Your Educational Background Doesn't Matter Here. You Can Do 
+                    This Course From Any Educational Background. Anyone, Such As A University Student, College Student, Jobber, 
+                    Unemployed, Lover, Runaway Lover, Even The Girlfriend Who Doesn't Pick Up The Phone Can Do This Course. 
+                    However, You Have To Commit 6-8 Hours Everyday.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="3">
+                <Accordion.Header>How will I get a job after completing the course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    Take Note Of One Thing Clearly: We Cannot Guarantee You A Job. However, You'll Go To SCIC If You Finish The 
+                    Main Course On Time. There You Will Get Job-Related And Interview-Related Specific Training. Work Hard 
+                    There And One Of Our Job Placement Team Members Will Send Your CV/Resume To Several Companies. 
+                    Interestingly, Many Of Our Students Get Jobs As They Apply By Themselves. Finally, If You Keep Working Hard,
+                    One Of Our Job Placement Managers Will Keep Guiding You Until You Get A Job.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="4">
+                <Accordion.Header>I work full time. Should I join this course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    If You Want To Finish With Our Course Flow And Go To SCIC, You Will Have To Give It All. If You Do Not Devote 
+                    At Least 6 Hours Everyday Or Extra Time On Weekends And Holidays, You Will Be Unable To Complete Our Course 
+                    Content, Assignments, And Practice Problems Intime. You Will Not Be Able To Use All Of The Course's Facilities. 
+                    So, We Would Say, If You Can Assure At Least 6 Hours Everyday, You May Join This Course.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="5">
+                <Accordion.Header>What's inside the course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    You Will Learn Everything Needed To Become A Serious Web Developer. Starting From HTML, CSS, You'll Learn Bootstrap, 
+                    JavaScript, Git, ES6, REST API, Server, JSON, Etc. Not Only That, You'll Also Learn The Most Famous Framework, 
+                    ReactJS, Alongside These And Will Make A Complete Website. In Addition, You'll Learn Node, Database (Mongodb), 
+                    Debug, Problem Solving, Interview Questions And Many Other Things. We'll Teach You How To Build 11 Websites In 
+                    The Entire Course. Moreover, You'll Get 11 Websites To Build As Your Homework. If You Finish This Anyhow, Then 
+                    You'll Surely Be A Junior Developer.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="6">
+                <Accordion.Header>How much time will it take to finish the course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    If You Watch Tutorials For 1 To 1.5 Hours And Practice Those For 4 To 6 Hours, It Will Take 5 Months To Complete 
+                    The Course. But For Homework And Takeaway Projects You Have To Allot Extra Time. You Must Have A Hard Working 
+                    Mentality For Enrolling In This Course. There Is No Shortcut.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="7">
+                <Accordion.Header>How can I get the course videos?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    Course Videos Will Be Pre-Recorded. You Have To Create An Account And Register For This Course. From The Beginning, 
+                    Videos Will Be Distributed In One Module Every Day. Each Module Typically Has 10 To 12 Videos. You Must Watch These 
+                    Videos Within 24 Hours Of Their Release. As A Result, You Have To Allot A Space From Your Day To Day Life. You Can 
+                    Watch The Videos While Laying Down, Standing, Reclining, Swinging Your Legs, Dancing Or Even Hiding Under The Bed.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="8">
+                <Accordion.Header>Does everyone get a job from your course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    No. Everyone Is Not Hired. But Those Who Complete The Main Course And Do Well In SCIC, About 70% Of Them Get Jobs 
+                    Or Internships. Some Of The Others May Be In Their Early Stages Of University Or School And Are Not Looking For 
+                    Employment Or Internships. Those Who Are Unable To Qualify For The SCIC, They Try Themselves And Also Occasionally 
+                    Get Hired.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="9">
+                <Accordion.Header>What computer configuration do I need for this course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    First And Foremost, You Should Have Dedicated Time. 6-8 Hours Per Day. 8-10 Hours If Possible (If You Can't Give 
+                    Time Or If You Don't Want To Do Hard Work, There Will Be No Benefit For You In The Course.) Secondly, You'll Need 
+                    A Laptop Or A Computer (Where Essential Softwares Such As Node, Visual Studio Code Can Be Installed). 
+                    And Thirdly, You'll Need At Least 2-10 Mbps Internet. Broadband Is Recommended For Viewing The Course Videos. 
+                    A Minimum Of Four Months Dedicated Hard Work Is Required To Become A Professional Web Developer.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="10">
+                <Accordion.Header>I'm having trouble while paying for this course. What should I do?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    Nothing To Worry About. Send Your Problem In Detail To Web@Programming-Hero.Com. You Can Call Us In Our Number 
+                    Too. We Will Resolve Your Issue Within 24 Hours.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="11">
+                <Accordion.Header>Is there anything in this course about WordPress or Freelancing?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    This Course Does Not Cover Freelancing Or Wordpress. However, If You Want To Customize WordPress There At An 
+                    Advanced Level, You Must Be Familiar With HTML, CSS, Bootstrap, JavaScript, And Even React. All Of Them Can Be 
+                    Learned From This Course.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="12">
+                <Accordion.Header>What should I do if I get stuck somewhere while following the course?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    We've Set Up A Private Facebook Group For The Course. Our Goal Is To Respond To All Of Your Questions Within 
+                    10 Hours. On Average, All Responses Will Be Received Within 2-3 Hours. Furthermore, There Will Be A Few Parallel 
+                    Meet Sessions Scheduled Three Times Everyday Where You Can Use Screen Sharing To Fix Your Problem. What Else 
+                    Does It Take? 😉
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="13">
+                <Accordion.Header>How can I get access to videos offline?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    You Will Get Access To Your Offline Mobile Application (Android And IOS) Called Neptune. Also, You Will Get 
+                    Access To Our Offline Desktop App. YAY.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className='my-3' eventKey="14">
+                <Accordion.Header>Apart from these, I have one more question. Where should I ask?</Accordion.Header>
+                <Accordion.Body>
+                  <span className="fs-5">
+                    No Worries. Please Direct Any Questions To Web@Programming-Hero.Com. We Will Get Back To You Within 24 Hours.
+                  </span>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+        </Container>
+      </section>
+      <Footer></Footer>
     </div>
   );
 }
-
 export default Home;

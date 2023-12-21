@@ -1,27 +1,28 @@
 import React from 'react';
+import './css/style.css';
 import app from './firebase.init';
 import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut} from 'firebase/auth';
+import Footer from '../Footer/Footer';
 
 // auth
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // document.getElementById('sign-in-btn').style.display = 'none';
-    // document.getElementById('sign-out-btn').style.display = 'block';
+    const container = document.getElementById('profile');
     const div = document.createElement('div');
-    div.innerHTML = `
+    container.innerHTML = `
       <img src="${user.photoURL}" height="50px" width="50px"><br>
       <h1>${user.displayName}</h1>
       <p>${user.email}</p>
     `;
-    document.body.appendChild(div);
+    container.appendChild(div);
+
+
     console.log('user signed in')
     console.log(user)
   } 
   else {
-    // document.getElementById('sign-in-btn').style.display = 'block';
-    // document.getElementById('sign-out-btn').style.display = 'none';
     console.log("user isn't signed in")
   }
 });
@@ -30,11 +31,15 @@ onAuthStateChanged(auth, (user) => {
 // handle sign out
 const handleSignOut = () => {
   try {
-    signOut(auth).then(() => console.log("signout"))
+    signOut(auth).then(() => {
+      console.log("signout")
+      window.location.reload();
+    })
   } catch (error) {
     console.log('Error logging out: ', error)
   }
 }
+
 
 
 // function
@@ -56,13 +61,19 @@ function Register() {
   return (
     <div>
         <h1>Register Now</h1>
+
+        <div className='p-5' id='profile'>
+          User
+        </div>
         
         <button onClick={handleGoogleSignIn} id='sign-in-btn'>Google Sign In</button>
 
         <button onClick={handleSignOut} id='sign-out-btn'>Sign Out</button>
+        <Footer></Footer>
     </div>
   );
 }
+
 
 
 
