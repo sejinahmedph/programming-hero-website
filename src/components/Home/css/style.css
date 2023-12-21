@@ -192,6 +192,110 @@ body {
     background: linear-gradient(105.89deg, #8840FF 7.77%, #03024A 95.22%);
     z-index: 5;
 }
+/* ======================= */
+/* What will learn Section */
+/* ======================= */
+#what-will-learn-section {
+    padding: 80px 10px;
+    background: #000211;
+    color: white;
+}
+#what-will-learn-section .item-1, #what-will-learn-section .item-2 {
+    height: 220px;
+}
+#what-will-learn-section .background {
+    position: relative;
+}
+#what-will-learn-section .icon {
+    width: 171px;
+    position: relative;
+    top: -150px;
+    text-align: center;
+}
+#what-will-learn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+@keyframes dropping {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes dropping2 {
+    0% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+#what-will-learn-section .item-1 {
+    animation: dropping 5s linear infinite;
+}
+#what-will-learn-section .item-2 {
+    animation: dropping2 5s linear infinite;
+}
+/* ==================== */
+/* = Projects Section = */
+/* ==================== */
+#projects-section {
+    background: #000211;
+    padding: 80px 0px;
+}
+#projects-section #container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+#projects-section #container .item {
+    background: #122136;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 25px;
+}
+#projects-section #container .item:hover {
+    background: linear-gradient(89.7deg, #2B7652 1.61%, #44EBCD 181.18%);
+}
+#projects-section #container .item img {
+    transition: 0.5s;
+}
+#projects-section #container .item:hover img {
+    transform: scale(1.1);
+}
+#projects-section #container .item .title {
+    font-size: 45px;
+    font-weight: 600;
+    text-align: start;
+    background: linear-gradient(97.64deg, #AAFAFF 15.56%, #B5ACFF 92.85%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#projects-section #container .item .ic_arrow {
+    opacity: 0;
+    margin-left: -40px;
+}
+#projects-section #container .item:hover .ic_arrow {
+    opacity: 1;
+}
 /* =================== */
 /* === Media Query === */
 /* =================== */
@@ -253,5 +357,19 @@ body {
     }
     #x-factors-section article .image-container {
         display: none;
+    }
+    /* projects section */
+    #projects-section #container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* max width 600px */
+@media screen and (max-width: 600px) {
+    #projects-section #container .item {
+        padding: 10px 15px;
+    }
+    #projects-section #container .item .title {
+        font-size: 30px;
     }
 }

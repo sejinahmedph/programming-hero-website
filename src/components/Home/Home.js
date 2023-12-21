@@ -14,6 +14,21 @@ import globe from './images/globe.svg';
 import liveSupport from './images/live-support.svg';
 import crashCourse from './images/crash-course.svg';
 import offlineVideos from './images/offline-videos.svg';
+import htmlBg from './images/html-active.svg';
+import cssBg from './images/css-active.svg';
+import tailwindBg from './images/tailwind-active.svg';
+import firebaseBg from './images/firebase-active.svg';
+import mongoBg from './images/mongodb-active.svg';
+import ic_html from './images/ic_html.svg';
+import ic_css from './images/ic_css.svg';
+import ic_tailwind from './images/ic_tailwind.svg';
+import ic_js from './images/ic_js.svg';
+import ic_react from './images/ic_react.svg';
+import ic_firebase from './images/ic_firebase.svg';
+import ic_mongo from './images/ic_mongo.svg';
+import projectBg from './images/project-bg.png';
+import leaderBoard from './images/Project-2-Leaderboard.jpeg';
+import ic_arrow from './images/ic_arrow-right.svg';
 // Bootstrap Components
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -153,7 +168,7 @@ function Home() {
         </Container>
       </section>
       <section id='x-factors-section'>
-        <h1 className='title'>X-Factors Of <br/> Programming Hero_</h1>
+        <h1 className='title m-2'>X-Factors Of <br/> Programming Hero_</h1>
         <Container className='py-5'>
           <article className='rounded-4' id='first'>
             <div className='py-4 ps-4 pe-4'>
@@ -215,6 +230,83 @@ function Home() {
             </div>
             <div className='image-container bg-white ms-auto rounded-end-4'>
               <img src={offlineVideos} height={'100%'} width={'300px'} alt="img"/>
+            </div>
+          </article>
+        </Container>
+      </section>
+      <section id='what-will-learn-section'>
+        <div className='text-center p-2'>
+          <h1 className='title'>What Will You Learn?_</h1>
+          <span className='fs-5 fw-500'>The web course consists of 80+ modules, 25+ course projects, 15+ practice 
+          projects and 12 assignments.</span>
+        </div>
+        <article className='py-5' id='what-will-learn'>
+          <div className='item-1'>
+            <img src={htmlBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_html} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>Html5</span>
+            </div>
+          </div>
+          <div className='item-2'>
+            <img src={cssBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_css} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>Css3</span>
+            </div>
+          </div>
+          <div className='item-1'>
+            <img src={tailwindBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_tailwind} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>Tailwind</span>
+            </div>
+          </div>
+          <div className='item-2'>
+            <img src={firebaseBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_js} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>Javascript</span>
+            </div>
+          </div>
+          <div className='item-1'>
+            <img src={cssBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_react} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>React</span>
+            </div>
+          </div>
+          <div className='item-2'>
+            <img src={firebaseBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_firebase} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>Firebase</span>
+            </div>
+          </div>
+          <div className='item-1'>
+            <img src={mongoBg} className='background' alt="background"/>
+            <div className='icon'>
+              <img src={ic_mongo} height={"80px"} width={"80px"} alt="icon"/><br/>
+              <span className='fs-5 fw-500'>Mongo db</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id='projects-section'>
+        <h1 className='title'>Projects You Will Build_</h1>
+        <Container className='py-5'>
+          <article className='py-5' style={{background: `url(${projectBg}) center bottom / contain no-repeat`}} id='container'>
+            <div className='item rounded-4'>
+              <div>
+                <h1 className='title m-2'>Ranking Board</h1>
+              </div>
+              <div className='d-flex align-items-center'>
+                <img src={leaderBoard} className='w-100 rounded-4' alt="project"/>
+                <img src={ic_arrow} className='ic_arrow' alt="ic_arrow"/>
+              </div>
+            </div>
+            <div className='item'>
+              sa
             </div>
           </article>
         </Container>

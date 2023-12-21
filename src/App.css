@@ -18,6 +18,9 @@
 .bg-none {
   background: none!important;
 }
+.bg-white {
+  background: white!important;
+}
 /* font */
 .fw-500 {
   font-weight: 500!important;
